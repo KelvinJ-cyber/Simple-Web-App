@@ -30,4 +30,14 @@ public class ProductController {
         System.out.println(product);
         service.addProduct(product);
     }
+
+    // ! @RequestBody annotation is used to map the HTTP request body to a Java object
+    @PutMapping("/products")
+    public void updateProduct(@RequestBody Product product) {
+        service.updateProduct(product);
+    }
+    @DeleteMapping("/products/{productId}") // ! Path variable to capture productId from the URL and store it in the productId parameter
+    public void deleteProduct(@PathVariable int productId) {
+        service.deleteProduct(productId);
+    }
 }
