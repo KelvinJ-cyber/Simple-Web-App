@@ -36,8 +36,13 @@ public class ProductController {
     public void updateProduct(@RequestBody Product product) {
         service.updateProduct(product);
     }
+
+
     @DeleteMapping("/products/{productId}") // ! Path variable to capture productId from the URL and store it in the productId parameter
     public void deleteProduct(@PathVariable int productId) {
         service.deleteProduct(productId);
+    }
+    public void method() {
+        // This method is intentionally left blank
     }
 }
